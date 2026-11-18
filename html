@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ادبیات‌کده — عربی را قدم‌به‌قدم یاد بگیر</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap">
+<style>
+:root{--bg:#f6f4fc;--card:#fff;--tx:#1f1b3a;--mut:#5d5878;--ac:#4f46e5;--acx:#fff;--bd:#e4e0f5;--ok:#168a4a;--no:#c53030;--board:#1f3d36;--chalk:#f2efe6;--yel:#ffd166;--sh:0 8px 24px rgba(70,55,140,.1);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#12111a;--card:#1d1b2b;--tx:#f1efff;--mut:#b3aed0;--ac:#9a96ff;--acx:#12111a;--bd:#34304a;--ok:#4cc27d;--no:#ef6a5b;--board:#17302a;--sh:none}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#12111a;--card:#1d1b2b;--tx:#f1efff;--mut:#b3aed0;--ac:#9a96ff;--acx:#12111a;--bd:#34304a;--ok:#4cc27d;--no:#ef6a5b;--board:#17302a;--sh:none}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:'Vazirmatn',Tahoma,'Segoe UI',sans-serif;line-height:1.8}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.w{max-width:980px;margin:0 auto;padding:16px}
+.skip{position:absolute;inset-inline-start:8px;top:-70px;background:var(--ac);color:var(--acx);padding:8px 14px;border-radius:8px;z-index:9}.skip:focus{top:8px}
+.top{background:var(--card);border-bottom:1px solid var(--bd)}
+.bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-block:8px}
+.logo{font-weight:800;font-size:1.3rem;color:var(--ac);text-decoration:none}
+.top nav{display:flex;gap:2px;flex-wrap:wrap;margin-inline-start:auto}
+.nl{font:inherit;background:none;border:0;color:var(--tx);padding:6px 12px;border-radius:999px;cursor:pointer}
+.nl:hover,.nl[aria-current]{background:var(--bd)}
+.chip{padding:2px 12px;border-radius:999px;border:1px solid var(--bd);background:var(--card);font-size:.88rem;white-space:nowrap}
+.chip.on{background:var(--ac);color:var(--acx);border-color:var(--ac)}
+h1{font-size:1.8rem;margin:.3em 0;font-weight:800;line-height:1.5}
+h2{font-size:1.3rem;margin:32px 0 6px}
+h3{margin:.2em 0;font-size:1.05rem}
+.sub,.mut{color:var(--mut)}
+.crumb{font-size:.9rem;color:var(--mut)}.crumb a{color:var(--ac)}
+.hero{background:linear-gradient(135deg,#4f46e5,#7c3aed 55%,#db2777);color:#fff;border-radius:26px;padding:28px;display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:center;margin-top:8px}
+@media (max-width:700px){.hero{grid-template-columns:1fr}.hero svg{max-width:240px;margin:0 auto;display:block}}
+svg text{font-family:inherit}
+.pills{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.pill{background:#ffffff2e;border-radius:999px;padding:2px 12px;font-size:.85rem;display:inline-block}
+.btn.cta{background:#ffd166;color:#2b2200;border-color:#ffd166;font-size:1.05rem;padding:11px 24px}
+.btn.ghost{background:transparent;color:#fff;border-color:#ffffff88}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:10px}
+.cd{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:4px;box-shadow:var(--sh)}
+.cd p{margin:0;color:var(--mut);font-size:.92rem}
+.tile{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;font-size:1.5rem;background:var(--t,#e0e7ff)}
+.bg{align-self:flex-start;border:1px dashed var(--mut);border-radius:999px;padding:2px 10px;font-size:.8rem;color:var(--mut);margin-top:auto}
+.cd .btn{margin-top:auto}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:10px}
+.stp{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;box-shadow:var(--sh)}
+.stp b{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--ac);color:var(--acx);margin-inline-end:6px}
+.cont{display:flex;gap:16px;align-items:center;margin-top:16px;flex-wrap:wrap}
+.cont>div:nth-child(2){flex:1;min-width:200px}
+.ring{--p:0;width:76px;height:76px;border-radius:50%;background:conic-gradient(var(--ac) calc(var(--p)*1%),var(--bd) 0);display:grid;place-items:center;flex:none}
+.ring b{background:var(--card);border-radius:50%;width:58px;height:58px;display:grid;place-items:center;font-size:.95rem}
+.pb{height:10px;background:var(--bd);border-radius:99px;overflow:hidden;margin:6px 0}
+.pb i{display:block;height:100%;background:var(--ac)}
+.syl{list-style:none;padding:0;margin:12px 0;display:grid;gap:8px}
+.syl li{display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:10px 14px;flex-wrap:wrap}
+.syl small{display:block;color:var(--mut)}.syl .lk{opacity:.65}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;margin-bottom:10px}
+.ar{font-size:1.4rem;font-weight:600}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.cert{border:4px double var(--ac);border-radius:20px;padding:26px;text-align:center;background:var(--card);margin:14px 0}
+.cert h2{margin:6px 0;color:var(--ac)}.cert .nm{font-size:1.6rem;font-weight:800;margin:8px 0}
+.inp{font:inherit;padding:9px 14px;border-radius:12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);min-width:220px}
+.note{border:1px dashed var(--bd);border-radius:14px;padding:10px 14px;color:var(--mut);font-size:.9rem;margin-top:18px}
+.foot{font-size:.85rem;color:var(--mut)}
+.cf{position:fixed;top:-30px;font-size:1.5rem;pointer-events:none;animation:fall 1.9s ease-in forwards;z-index:9}
+@keyframes fall{to{transform:translateY(112vh) rotate(380deg)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.ln{opacity:1!important;transform:none!important}.cf{display:none}}
+@media print{.top,.crumb,.foot,.noprint{display:none!important}}
+.board{background:var(--board);color:var(--chalk);border:6px solid #8a5a2b;border-radius:12px;min-height:270px;padding:16px 20px;font-size:1.1rem}
+.ln{opacity:0;transform:translateY(6px);animation:in .5s forwards;margin:4px 0}
+@keyframes in{to{opacity:1;transform:none}}
+.ln.h{font-weight:800;font-size:1.25rem;color:var(--yel)}
+.ln.q{font-weight:600;margin-top:12px;border-top:1px dashed #ffffff55;padding-top:10px}
+.row{display:flex;gap:14px;align-items:baseline;font-size:1.3rem;flex-wrap:wrap}
+.pr{min-width:56px;opacity:.7;font-size:1rem}
+.wd{min-width:110px;font-weight:600}
+.fa{font-size:.95rem;color:#cfd8d3}
+.sf{color:var(--yel);font-weight:800}
+.hl .sf{animation:pl .7s infinite alternate}
+@keyframes pl{to{color:#fff}}
+.tbar{display:flex;gap:10px;align-items:center;margin:12px 0}
+.tbar svg{flex-shrink:0}
+.bubble{flex:1;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:10px 14px;min-height:58px}
+#arm{transform-origin:60px 58px}
+.talk #arm{animation:wv .45s 4 alternate}
+@keyframes wv{to{transform:rotate(-24deg)}}
+.act{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;min-height:44px}
+.btn{font:inherit;padding:9px 18px;border-radius:10px;border:1px solid var(--ac);background:var(--ac);color:var(--acx);cursor:pointer;font-weight:600}
+.btn.alt{background:var(--card);color:var(--tx);border-color:var(--bd)}
+.btn.ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.btn.no{background:var(--no);color:#fff;border-color:var(--no)}
+.btn:disabled{cursor:default}
+.btn{border-radius:999px}.board{border-radius:16px}
+@media (max-width:480px){.act .btn{flex:1 1 100%}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">پرش به محتوا</a>
+<header class="top"><div class="w bar"><a class="logo" href="#home">ادبیات‌کده 🎓</a><span class="chip" id="xpc" aria-live="polite"></span>
+<nav aria-label="منوی اصلی"><button class="nl" data-v="home">خانه</button><button class="nl" data-s="paths">مسیرها</button><button class="nl" data-v="review">مرور <span id="cnt"></span></button><button class="nl" data-v="cert">گواهی</button></nav></div></header>
+<main id="main" class="w">
+
+<section id="v-home">
+<div class="hero"><div>
+<span class="pill">کاملاً آنلاین · ۲۴ ساعته</span>
+<h1 tabindex="-1">عربی را مثل کلاس خصوصی یاد بگیر، هر ساعت و هر جا</h1>
+<p>معلم انیمیشنی پشت تخته‌سیاه توضیح می‌دهد، از تو سؤال می‌پرسد و تا مطلب جا نیفتاده سراغ درس بعدی نمی‌رود.</p>
+<div class="pills"><span class="pill">بازخورد فوری</span><span class="pill">مرور هوشمند</span><span class="pill">گواهی شرکت</span></div>
+<p><button class="btn cta" id="hcta">شروع درس اول</button> <button class="btn ghost" data-s="how">چطور کار می‌کند؟</button></p>
+</div>
+<svg viewBox="0 0 240 190" aria-hidden="true"><rect x="8" y="8" width="224" height="130" rx="12" fill="#1f3d36" stroke="#a9743a" stroke-width="7"/><text x="120" y="62" font-size="34" fill="#f2efe6" text-anchor="middle">كَتَبَ</text><text x="120" y="98" font-size="15" fill="#ffd166" text-anchor="middle">نوشت ← الماضي</text><path d="M30 118h60" stroke="#f2efe6" stroke-width="2" stroke-dasharray="4 5"/><circle cx="52" cy="158" r="18" fill="#e8b98a"/><path d="M34 154q18-24 36 0z" fill="#3b2f2a"/><circle cx="46" cy="159" r="2" fill="#222"/><circle cx="58" cy="159" r="2" fill="#222"/><path d="M46 167q6 4 12 0" stroke="#7a3b2e" fill="none" stroke-width="2"/><rect x="82" y="152" width="46" height="34" rx="10" fill="#ffd166"/><text x="105" y="176" font-size="14" text-anchor="middle" fill="#2b2200">آفرین!</text></svg>
+</div>
+<div id="cont"></div>
+<h2 id="how">چطور کار می‌کند؟</h2>
+<div class="steps"><div class="stp"><b>۱</b>معلم روی تخته می‌نویسد و با صدا توضیح می‌دهد.</div><div class="stp"><b>۲</b>از تو می‌پرسد «متوجه شدی؟» و با یک سؤال کوچک مطمئن می‌شود.</div><div class="stp"><b>۳</b>اگر اشتباه کنی، دوباره و با مثالی دیگر توضیح می‌دهد.</div><div class="stp"><b>۴</b>با تمرین و آزمون جامع، درس بعدی باز می‌شود و اشتباه‌هایت برای مرور می‌مانند.</div></div>
+<h2 id="paths">مسیرهای آموزشی</h2>
+<div class="grid" id="g1"></div>
+<h2>گواهی شرکت</h2>
+<div class="cd"><div class="tile" style="--t:#fef3c7" aria-hidden="true">🏅</div><h3>با قبولی در آزمون جامع، گواهی بگیر</h3><p>گواهی شرکت با شناسه قابل‌استعلام برای هر دوره صادر می‌شود.</p><button class="btn" data-v="cert">دیدن گواهی</button></div>
+<p class="note">این صفحه نمونه اولیه است: واحد ۱ صرف و لهجه عراقی کار می‌کنند و بقیه مسیرها در دست تولیدند. گواهی با نام دانشگاه در مراحل بعد و با توافق دانشگاه بررسی می‌شود.</p>
+</section>
+
+<section id="v-sarf" hidden>
+<nav class="crumb" aria-label="مسیر صفحه"><a href="#home">خانه</a> › صرف</nav>
+<h1 tabindex="-1">صرف · واحد ۱: مبانی</h1>
+<p class="sub">از علم صرف و اقسام کلمه تا ماضی، مضارع و امر. ترتیب موضوعی از بخش صرف «مبادئ العربية» الهام گرفته و متن درس‌ها اصلی است.</p>
+<div class="chips"><span class="chip on">سطح: مبتدی</span><span class="chip">۵ درس + آزمون جامع</span><span class="chip">گواهی شرکت</span></div>
+<div class="pb" role="progressbar" aria-label="پیشرفت دوره" aria-valuemin="0" aria-valuemax="100" id="cpb"><i id="cpi"></i></div>
+<p class="mut" id="cpt"></p>
+<button class="btn" id="cta"></button>
+<h2>فهرست درس‌ها</h2>
+<ol class="syl" id="syl"></ol>
+</section>
+
+<section id="v-dialect" hidden>
+<nav class="crumb" aria-label="مسیر صفحه"><a href="#home">خانه</a> › لهجه‌های عربی</nav>
+<h1 tabindex="-1">لهجه‌های عربی · عراقی</h1>
+<p class="sub">جمله‌های کاربردی با تلفظ فارسی و معادل فصیح، مناسب سفر، بازار و گفت‌وگوی روزمره.</p>
+<div class="chips"><span class="chip on">عراقی</span><span class="chip">خلیجی · به‌زودی</span><span class="chip">شامی · به‌زودی</span><span class="chip">مصری · به‌زودی</span></div>
+<div id="dl"></div>
+<p class="mut">صدا در این نمونه با موتور گفتار مرورگر و به تلفظ فصیح پخش می‌شود؛ در نسخه کامل، گوینده بومی هر لهجه آن را ضبط می‌کند.</p>
+</section>
+
+<section id="v-lesson" hidden>
+<nav class="crumb" aria-label="مسیر صفحه"><a href="#home">خانه</a> › <a href="#sarf">صرف</a> › <span id="bl"></span></nav>
+<h1 tabindex="-1">کلاس درس</h1>
+<div class="board" id="board" role="region" aria-label="تخته‌سیاه"></div>
+<div class="tbar" id="tb">
+<svg viewBox="0 0 80 100" width="72" height="90" aria-hidden="true"><circle cx="40" cy="30" r="18" fill="#e8b98a"/><path d="M22 26q18-24 36 0z" fill="#3b2f2a"/><circle cx="33" cy="31" r="2" fill="#222"/><circle cx="47" cy="31" r="2" fill="#222"/><path d="M34 39q6 4 12 0" stroke="#7a3b2e" fill="none" stroke-width="2"/><rect x="18" y="50" width="44" height="46" rx="14" fill="#4f46e5"/><g id="arm"><line x1="60" y1="58" x2="78" y2="40" stroke="#e8b98a" stroke-width="6" stroke-linecap="round"/></g></svg>
+<div class="bubble" id="say" aria-live="polite"></div>
+</div>
+<div class="act" id="act"></div>
+<button class="btn alt" onclick="go('sarf')">بازگشت به فهرست درس‌ها</button>
+</section>
+
+<section id="v-review" hidden>
+<nav class="crumb" aria-label="مسیر صفحه"><a href="#home">خانه</a> › مرور هوشمند</nav>
+<h1 tabindex="-1">مرور هوشمند</h1>
+<p class="sub">سؤال‌هایی که اشتباه جواب می‌دهی ذخیره می‌شوند و با فاصله‌های زمانی (مثلاً ۱، ۳، ۷ و ۱۴ روز بعد) دوباره برایت می‌آیند.</p>
+<div id="rv"></div>
+</section>
+
+<section id="v-cert" hidden>
+<nav class="crumb" aria-label="مسیر صفحه"><a href="#home">خانه</a> › گواهی</nav>
+<h1 tabindex="-1">گواهی شرکت</h1>
+<div id="certbox"></div>
+</section>
+</main>
+<footer class="w foot">نمونه اولیه (Prototype) · درس‌ها داده‌محورند و افزودن درس یعنی افزودن یک آیتم به آرایه LS.</footer>
+<script>
+const $=s=>document.querySelector(s),bd=$('#board'),sy=$('#say'),ac=$('#act'),tb=$('#tb');
+function chalk(h,c,d){const e=document.createElement('div');e.className='ln '+(c||'');e.style.animationDelay=(d||0)+'s';e.innerHTML=h;bd.appendChild(e)}
+function clr(){bd.innerHTML=''}
+function say(t){sy.textContent=t;tb.classList.remove('talk');void tb.offsetWidth;tb.classList.add('talk')}
+function btns(l){ac.innerHTML='';l.forEach(([t,f,c])=>{const b=document.createElement('button');b.className='btn '+(c||'');b.textContent=t;b.onclick=f;ac.appendChild(b)})}
+const S=t=>`<span class="sf">${t}</span>`,r=(a,b,c)=>`<div class="row"><span class="pr">${a}</span><span class="wd">${b}</span><span class="fa">${c}</span></div>`;
+/* هر درس: t عنوان، q پرسش به سبک کتاب، b خطوط تخته، s توضیح معلم، re توضیح دوم، c سؤال کنترل، f تمرین پایانی [سؤال، گزینه‌ها، شماره پاسخ درست] */
+const LS=[
+{t:'علم صرف',q:'علم صرف چیست و چه کاری می‌کند؟',
+b:['صرف: علمِ '+S('ساختار و صورتِ کلمه'),r('','كَتَبَ ← يَكْتُبُ ← اُكْتُبْ','یک ریشه، چند صورت'),'نحو: '+S('جایگاه کلمه در جمله')+' و اعراب آخر آن'],
+s:'صرف می‌گوید کلمه چطور ساخته و تغییر می‌کند؛ نحو می‌گوید کلمه در جمله چه نقشی دارد.',
+re:'ساده‌تر: صرف = شکل کلمه، نحو = جایگاه کلمه. تبدیل «كَتَبَ» به «يَكْتُبُ» کار صرف است؛ رفع و نصب «الكتابُ» کار نحو.',
+c:['تبدیل «كَتَبَ» به «يَكْتُبُ» به کدام علم مربوط است؟',['صرف','نحو','بلاغت'],0],
+f:[['اعراب آخر کلمه در جمله با کدام علم بررسی می‌شود؟',['صرف','نحو','عروض'],1],['کدام مورد کار علم صرف است؟',['ساختن «اُكْتُبْ» از «كَتَبَ»','تعیین فاعل جمله','بررسی وزن شعر'],0],['موضوع علم صرف چیست؟',['ساختار و صورت کلمه','معنای آیه','جایگاه کلمه در جمله'],0]]},
+{t:'کلمه و اقسام آن',q:'کلمه بر چند نوع است؟',
+b:['الكلمة: '+S('اسم')+' · '+S('فعل')+' · '+S('حرف'),r('اسم','رَجُلٌ، كِتَابٌ','نام کس یا چیز، بدون زمان'),r('فعل','كَتَبَ، يَذْهَبُ','کار + زمان'),r('حرف','في، مِنْ','معنا فقط در کنار کلمه‌های دیگر')],
+s:'هر کلمه یا اسم است یا فعل یا حرف. اسم نام چیزی است، فعل کار را با زمان می‌گوید و حرف تنها در ترکیب با کلمه‌های دیگر معنا می‌دهد.',
+re:'سه سؤال بپرس: نام چیزی است؟ اسم. کاری با زمان است؟ فعل. تنها که باشد معنای کامل نمی‌دهد و کلمه‌ها را به هم وصل می‌کند؟ حرف.',
+c:['«في» چه نوع کلمه‌ای است؟',['حرف','اسم','فعل'],0],
+f:[['«كِتَابٌ» چه نوع کلمه‌ای است؟',['اسم','فعل','حرف'],0],['«ذَهَبَ» چه نوع کلمه‌ای است؟',['فعل','اسم','حرف'],0],['کدام یک حرف است؟',['مِنْ','رَجُلٌ','جَلَسَ'],0]]},
+{t:'فعل ماضی',q:'فعل ماضی چیست و چگونه صرف می‌شود؟',
+b:['الماضي: فعلٌ يدلّ على '+S('حدثٍ وقع في الزمن الماضي'),r('هو','كَتَب'+S('َ'),'او نوشت'),r('هي','كَتَبَ'+S('تْ'),'او (زن) نوشت'),r('أنتَ','كَتَبْ'+S('تَ'),'تو (مرد) نوشتی'),r('أنتِ','كَتَبْ'+S('تِ'),'تو (زن) نوشتی'),r('أنا','كَتَبْ'+S('تُ'),'من نوشتم')],
+s:'ماضی کاری را می‌گوید که انجام شده و ضمیر فاعل به آخر فعل می‌چسبد. به پایانه‌های زردرنگ دقت کن.',
+re:'ـتُ با ضمّه یعنی «من»، ـتَ با فتحه یعنی «تو (مرد)» و ـتِ با کسره یعنی «تو (زن)». پایانه را دنبال کن.',
+c:['«كَتَبْتُ» با کدام ضمیر می‌آید؟',['أنا','أنتَ','هي'],0],
+f:[['معنای «كَتَبَتْ» چیست؟',['او (زن) نوشت','تو نوشتی','من نوشتم'],0],['«كَتَبْتِ» خطاب به چه کسی است؟',['یک مرد','یک زن','خودم'],1],['کدام صیغه یعنی «من نوشتم»؟',['كَتَبْتُ','كَتَبَ','كَتَبْتَ'],0]]},
+{t:'فعل مضارع',q:'فعل مضارع چیست و چگونه ساخته می‌شود؟',
+b:['المضارع: با یکی از حروف '+S('أ ن ي ت')+' (أنيت) شروع می‌شود',r('أنا',S('أَ')+'كْتُبُ','من می‌نویسم'),r('نحن',S('نَ')+'كْتُبُ','ما می‌نویسیم'),r('أنتَ',S('تَ')+'كْتُبُ','تو (مرد) می‌نویسی'),r('هو',S('يَ')+'كْتُبُ','او می‌نویسد')],
+s:'مضارع هم حال را می‌رساند هم آینده و حرف اولش یکی از «أ ن ي ت» است. همین حرف اول نشان می‌دهد فاعل کیست.',
+re:'حرف اول را ببین: أ = من، ن = ما، ي = او (مرد)، ت = تو. (تَكْتُبُ برای «او (زن)» هم می‌آید.)',
+c:['کدام حرف جزو حروف مضارعه (أنيت) نیست؟',['ب','ن','ي'],0],
+f:[['«نَكْتُبُ» یعنی چه؟',['ما می‌نویسیم','من می‌نویسم','او می‌نویسد'],0],['مضارع «ذَهَبَ» برای «هو» کدام است؟',['يَذْهَبُ','أَذْهَبُ','نَذْهَبُ'],0],['«أَكْتُبُ» با کدام ضمیر می‌آید؟',['أنا','هو','نحن'],0]]},
+{t:'فعل امر',q:'فعل امر چیست و از کجا ساخته می‌شود؟',
+b:['امر از '+S('مضارعِ مخاطب')+' ساخته می‌شود:','۱) حرف مضارعه را بردار  ۲) آخر را ساکن کن  ۳) اگر اولش ساکن شد، همزه وصل بیاور',r('','تَكْتُبُ ← '+S('اُكْتُبْ'),'بنویس'),r('','تَذْهَبُ ← '+S('اِذْهَبْ'),'برو'),r('','تَجْلِسُ ← '+S('اِجْلِسْ'),'بنشین')],
+s:'امر یعنی دستور دادن. از مضارعِ مخاطب، حرف اول را برمی‌داریم، آخر را ساکن می‌کنیم و در صورت لزوم همزه وصل می‌آوریم.',
+re:'«تَذْهَبُ»: حرف «ت» را بردار ← «ذْهَبُ»؛ آخر را ساکن کن ← «ذْهَبْ»؛ چون اولش ساکن است همزه وصل بیاور ← «اِذْهَبْ».',
+c:['برای ساختن امر از «تَذْهَبُ» اول چه می‌کنیم؟',['حرف مضارعه را حذف می‌کنیم','فعل را ماضی می‌کنیم','حرف «س» اضافه می‌کنیم'],0],
+f:[['امر «تَجْلِسُ» کدام است؟',['اِجْلِسْ','جَلَسَ','يَجْلِسُ'],0],['«اُكْتُبْ» یعنی چه؟',['بنویس','نوشت','می‌نویسد'],0],['آخر فعل امرِ مخاطبِ صحیح چه حالتی می‌گیرد؟',['ساکن','ضمه','فتحه'],0]]}
+];
+const D=[['شلونك؟','كيف حالك؟','حالت چطوره؟','shlonak'],['شكد؟','كم السعر؟','چقدر؟ (قیمت)','shgad'],['وين الحمام؟','أين دورة المياه؟','دستشویی کجاست؟','ween il-hammam'],['هواي حلو','جميل جداً','خیلی خوبه','hawaay hilu']];
+let cur=0,sc=0,qi=0,ex=false,exQ=[];
+let done=parseInt(localStorage.getItem('adk_done'))||0,unl=parseInt(localStorage.getItem('adk_unl'))||1,xp=parseInt(localStorage.getItem('adk_xp'))||0,examDone=localStorage.getItem('adk_examDone')==='true',missed=JSON.parse(localStorage.getItem('adk_missed')||'[]');
+function lesson(hl){const l=LS[cur];clr();
+chalk(`درس ${cur+1} · ${l.t}`,'h');
+chalk('❓ '+l.q,'',.3);
+l.b.forEach((x,i)=>chalk(x,hl?'hl':'',.8+i*.5));
+chalk('آیا متوجه شدی؟','q',.8+l.b.length*.5+.2);
+say(hl?l.re:l.s);
+btns([['بله، متوجه شدم ✅',check],['نه، هنوز نه 🤔',()=>lesson(true)]])}
+
+function ask(q,o,c,ok,bad,fin){chalk(q,'q',.2);ac.innerHTML='';
+o.forEach((t,i)=>{const b=document.createElement('button');b.className='btn alt';b.textContent=t;b.onclick=()=>{
+[...ac.children].forEach(x=>x.disabled=true);
+if(i===c){b.className='btn ok';say('درسته! آفرین. ۱۰+ امتیاز');gain(10);setTimeout(ok,1100)}
+else{b.className='btn no';const tag=q+' ← '+o[c];if(!missed.includes(tag)){missed.push(tag);upd();rev()}
+say(fin?'جواب درست: '+o[c]:'نه دقیقاً؛ بیا دوباره توضیح بدهم.');setTimeout(bad,1500)}};
+ac.appendChild(b)})}
+
+function check(){const l=LS[cur];clr();chalk('پیش از ادامه، یک سؤال کوچک','h');
+ask(l.c[0],l.c[1],l.c[2],practice,()=>lesson(true),false)}
+
+function practice(){ex=false;qi=0;sc=0;next()}
+function exam(){ex=true;exQ=LS.map(l=>l.f[1]);qi=0;sc=0;next()}
+function next(){const Q=ex?exQ:LS[cur].f;if(qi>=Q.length)return res();const f=Q[qi];clr();
+chalk(`${ex?'آزمون جامع':'تمرین پایانی'} · سؤال ${qi+1} از ${Q.length}`,'h');
+ask(f[0],f[1],f[2],()=>{sc++;qi++;next()},()=>{qi++;next()},true)}
+
+function res(){clr();const e=ex,n=e?exQ.length:3,need=e?4:2,p=sc>=need;ex=false;
+chalk(p?(e?'🏆 آزمون جامع را گذراندی!':'🎉 قبول شدی!'):'نیاز به مرور داری','h');
+chalk(`نمره: ${sc} از ${n} (حداقل ${need} برای قبولی)`,'',.3);
+if(p){if(e){if(!examDone){gain(50);burst()}examDone=true;say('واحد اول کامل شد! گواهی‌ات آماده است.')}
+else{if(done<cur+1){gain(20);burst()}done=Math.max(done,cur+1);unl=Math.min(5,Math.max(unl,cur+2));say(cur<4?'عالی! درس بعدی باز شد.':'همه ۵ درس تمام شد؛ آزمون جامع باز شد.')}
+btns(e?[['دریافت گواهی 🏅',()=>go('cert')],['بازگشت به درس‌ها',goMap,'alt']]:[['به نقشه درس‌ها ▼',goMap]])}
+else{say('اشکالی ندارد؛ اشتباه‌هایت به بخش مرور هوشمند رفت.');btns([[e?'به نقشه درس‌ها':'تکرار درس',e?goMap:()=>start(cur)]])}
+map()}
+
+const fa=n=>n.toLocaleString('fa-IR');
+const V=['home','sarf','dialect','lesson','review','cert'];let started=false,cid='',nm='';
+const P=[{id:'sarf',ic:'📘',t:'صرف',d:'ساختار کلمه: ماضی، مضارع و امر',lv:'مبتدی',n:5,c:'#e0e7ff'},{id:'dialect',ic:'🗣️',t:'لهجه‌های عربی',d:'عراقی، خلیجی، شامی و مصری',lv:'همه سطوح',c:'#fce7f3'},{id:'',ic:'🧩',t:'نحو',d:'جایگاه کلمه در جمله و اعراب',lv:'متوسط',c:'#dcfce7'},{id:'',ic:'✨',t:'بلاغت',d:'معانی، بیان و بدیع',lv:'متوسط',c:'#fef3c7'},{id:'',ic:'🎯',t:'آزمون‌ها و تقویتی‌ها',d:'کمک‌درسی دروس رشته و آمادگی ارشد و دکتری',lv:'کارشناسی و ارشد',c:'#e0f2fe'},{id:'',ic:'🎤',t:'کارگاه‌های آنلاین',d:'مکالمه و مهارت‌های تخصصی',lv:'همه سطوح',c:'#ffedd5'}];
+function go(v){location.hash=v}
+function gain(n){xp+=n;upd()}
+function upd(){$('#xpc').textContent='⭐ '+fa(xp)+' امتیاز · سطح '+fa(Math.floor(xp/100)+1);localStorage.setItem('adk_xp',xp);localStorage.setItem('adk_done',done);localStorage.setItem('adk_unl',unl);localStorage.setItem('adk_examDone',examDone);localStorage.setItem('adk_missed',JSON.stringify(missed))}
+function burst(){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;for(let i=0;i<24;i++){const s=document.createElement('span');s.className='cf';s.textContent=['🎉','⭐','✨','🎓'][i%4];s.style.left=Math.random()*100+'vw';s.style.animationDelay=Math.random()*.5+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),2600)}}
+function card(p){const b=p.id?`<button class="btn" onclick="go('${p.id}')">ورود</button>`:'<span class="bg">به‌زودی</span>';return `<article class="cd"><div class="tile" style="--t:${p.c}" aria-hidden="true">${p.ic}</div><h3>${p.t}</h3><p>${p.d}</p><p>${p.lv}${p.n?' · '+fa(p.n)+' درس':''}</p>${b}</article>`}
+function start(i){cur=i;ex=false;lesson(false)}
+function bl(){$('#bl').textContent=ex?'آزمون جامع':'درس '+fa(cur+1)}
+function startLesson(i){started=true;start(i);go('lesson')}
+function startExam(){started=true;exam();go('lesson')}
+function goMap(){go('sarf')}
+function map(){render()}
+function nextAct(){const nx=Math.min(done,4);return done>=5?(examDone?['دریافت گواهی',()=>go('cert')]:['آزمون جامع',startExam]):[done?'ادامه از درس '+fa(nx+1):'شروع درس ۱',()=>startLesson(nx)]}
+function rev(){$('#cnt').textContent=missed.length?'('+fa(missed.length)+')':'';
+$('#rv').innerHTML=missed.length?missed.map(t=>`<div class="card"><span class="ar">${t}</span><div class="mut">📅 مرور بعدی: فردا</div></div>`).join(''):'<div class="card mut">هنوز اشتباهی ثبت نشده. برو در درس یک خطای عمدی بکن، قول می‌دهم نمره‌ات را کم نکنم 😄</div>'}
+function render(){
+const nx=Math.min(done,4),pct=Math.round(done/5*100),a=nextAct();
+$('#cont').innerHTML=`<div class="cd cont"><div class="ring" style="--p:${pct}"><b>${fa(pct)}٪</b></div><div><h3>${done?'ادامه یادگیری':'آماده‌ای شروع کنیم؟'}</h3><p>${done>=5?'همه ۵ درس تمام شد.':'صرف · درس '+fa(nx+1)+': '+LS[nx].t}</p></div><button class="btn" id="ccta"></button></div>`;
+$('#ccta').textContent=a[0];$('#ccta').onclick=a[1];
+$('#hcta').textContent=done?a[0]:'شروع درس اول';$('#hcta').onclick=a[1];
+$('#g1').innerHTML=P.map(card).join('');
+$('#cpi').style.width=pct+'%';$('#cpb').setAttribute('aria-valuenow',pct);
+$('#cpt').textContent=fa(done)+' از ۵ درس تمام شده ('+fa(pct)+'٪)';
+const c=$('#cta');c.textContent=a[0];c.onclick=a[1];
+$('#syl').innerHTML=LS.map((l,i)=>`<li class="${i<unl?'':'lk'}"><span><b>درس ${fa(i+1)}.</b> ${l.t}<small>${l.q}</small></span><span>${i<done?'تمام‌شده ✅':i<unl?'باز 🔓':'قفل 🔒'}</span><button class="btn alt" ${i<unl?'':'disabled'} onclick="startLesson(${i})">${i<done?'مرور':'شروع'}</button></li>`).join('')+`<li class="${done>=5?'':'lk'}"><span><b>آزمون جامع.</b> ۵ سؤال از درس‌ها<small>حداقل ۴ پاسخ درست برای قبولی</small></span><span>${examDone?'گذرانده‌ای 🏅':done>=5?'باز 🔓':'قفل 🔒'}</span><button class="btn alt" ${done>=5?'':'disabled'} onclick="startExam()">${examDone?'مرور':'شروع'}</button></li>`;
+upd();rev()}
+function certView(){const b=$('#certbox');
+if(!examDone){b.innerHTML=`<div class="card"><p>گواهی بعد از قبولی در آزمون جامع واحد ۱ باز می‌شود. ${done>=5?'همه درس‌ها تمام شده؛ آزمون را بده.':'پیشرفت تو: '+fa(done)+' از ۵ درس.'}</p><button class="btn" id="cgo">${done>=5?'شروع آزمون':'رفتن به درس‌ها'}</button></div>`;$('#cgo').onclick=()=>done>=5?startExam():go('sarf');return}
+if(!cid)cid='ADK-'+Math.random().toString(36).slice(2,6).toUpperCase()+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
+b.innerHTML=`<p class="noprint"><label for="nm">نام و نام خانوادگی روی گواهی</label><br><input class="inp" id="nm" placeholder="نام خودت را بنویس"></p><div class="cert"><p class="mut">ادبیات‌کده · گواهی شرکت</p><h2>گواهی پایان دوره</h2><p>این گواهی به</p><div class="nm" id="cnm"></div><p>برای گذراندن دوره «مبانی صرف عربی · واحد ۱» و قبولی در آزمون جامع آن اعطا می‌شود.</p><p class="mut">شناسه قابل‌استعلام: <b dir="ltr">${cid}</b></p></div><p class="note">نمونه نمایشی. در نسخه کامل، شناسه روی سایت قابل‌استعلام است و صدور گواهی با نام دانشگاه در مراحل بعد و با توافق دانشگاه بررسی می‌شود.</p><button class="btn noprint" onclick="print()">چاپ یا ذخیره PDF</button>`;
+const i=$('#nm'),o=$('#cnm'),f=()=>{nm=i.value;o.textContent=nm||'نام شما'};i.value=nm;i.oninput=f;f()}
+function show(){let v=location.hash.slice(1);if(!V.includes(v))v='home';
+if(v==='lesson'&&!started){started=true;start(0)}
+V.forEach(x=>$('#v-'+x).hidden=x!==v);
+document.querySelectorAll('.nl[data-v]').forEach(b=>b.toggleAttribute('aria-current',b.dataset.v===v));
+if(v==='lesson')bl();
+render();if(v==='cert')certView();window.scrollTo(0,0);const h=$('#v-'+v+' h1');if(h)h.focus({preventScroll:true})}
+function play(i){try{const u=new SpeechSynthesisUtterance(D[i][0]);u.lang='ar-SA';speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+$('#dl').innerHTML=D.map((d,i)=>`<div class="card"><div class="ar">${d[0]}</div><div>${d[2]} <span class="mut">· ${d[3]}</span></div><div class="mut">فصیح: ${d[1]}</div><button class="btn alt" onclick="play(${i})" aria-label="پخش ${d[0]}">🔊 پخش</button></div>`).join('');
+document.querySelectorAll('[data-v],[data-s]').forEach(b=>b.onclick=()=>{if(b.dataset.v)go(b.dataset.v);else{if(location.hash.slice(1)&&location.hash!=='#home')go('home');setTimeout(()=>$('#'+b.dataset.s).scrollIntoView({behavior:'smooth'}),60)}});
+addEventListener('hashchange',show);
+show();
+</script>
+</body>
+</html>
