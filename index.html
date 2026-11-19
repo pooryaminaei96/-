@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4f46e5">
+<link rel="manifest" href="./manifest.webmanifest">
 <title>ادبیات‌کده — عربی را قدم‌به‌قدم یاد بگیر</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap">
 <style>
@@ -92,12 +94,35 @@ svg text{font-family:inherit}
 .btn:disabled{cursor:default}
 .btn{border-radius:999px}.board{border-radius:16px}
 @media (max-width:480px){.act .btn{flex:1 1 100%}}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:12px 0}
+.stat{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px}
+.stat b{display:block;font-size:1.35rem;color:var(--ac)}
+.review-card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px;margin:10px 0}
+.review-card .answer{display:none;margin:8px 0;color:var(--ok);font-weight:600}
+.review-card.revealed .answer{display:block}
+.form-grid{display:grid;gap:12px;max-width:700px}
+.form-grid label{display:grid;gap:4px}
+.form-grid input,.form-grid select,.form-grid textarea{font:inherit;padding:9px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--tx);width:100%}
+.form-grid textarea{min-height:110px}
+.status{padding:10px 14px;border:1px solid var(--bd);border-radius:12px;margin:10px 0}
+.status.error{border-color:var(--no);color:var(--no)}
+.status.success{border-color:var(--ok);color:var(--ok)}
+.cloud-course{border:1px solid var(--bd);border-radius:16px;padding:14px;margin:10px 0;background:var(--card)}
+.course-lesson{border-top:1px solid var(--bd);padding:10px 0}
+.course-lesson audio{display:block;width:min(100%,360px);margin-top:8px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.small{font-size:.88rem;color:var(--mut)}
+[hidden]{display:none!important}
+.admin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:14px 0}
+.admin-user{display:grid;gap:8px}.admin-user .form-grid{max-width:none}
+.admin-user-meta{color:var(--mut);font-size:.88rem}
+.admin-section{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;margin:16px 0}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">پرش به محتوا</a>
 <header class="top"><div class="w bar"><a class="logo" href="#home">ادبیات‌کده 🎓</a><span class="chip" id="xpc" aria-live="polite"></span>
-<nav aria-label="منوی اصلی"><button class="nl" data-v="home">خانه</button><button class="nl" data-s="paths">مسیرها</button><button class="nl" data-v="review">مرور <span id="cnt"></span></button><button class="nl" data-v="cert">گواهی</button></nav></div></header>
+<nav aria-label="منوی اصلی"><button class="nl" data-v="home">خانه</button><button class="nl" data-s="paths">مسیرها</button><button class="nl" data-v="dashboard">پیشرفت</button><button class="nl" data-v="review">مرور <span id="cnt"></span></button><button class="nl" data-v="cert">گواهی</button><button class="nl" data-v="account">حساب</button><button class="nl" data-v="admin" id="admin-nav" hidden>مدیریت</button></nav></div></header>
 <main id="main" class="w">
 
 <section id="v-home">
@@ -115,6 +140,11 @@ svg text{font-family:inherit}
 <div class="steps"><div class="stp"><b>۱</b>معلم روی تخته می‌نویسد و با صدا توضیح می‌دهد.</div><div class="stp"><b>۲</b>از تو می‌پرسد «متوجه شدی؟» و با یک سؤال کوچک مطمئن می‌شود.</div><div class="stp"><b>۳</b>اگر اشتباه کنی، دوباره و با مثالی دیگر توضیح می‌دهد.</div><div class="stp"><b>۴</b>با تمرین و آزمون جامع، درس بعدی باز می‌شود و اشتباه‌هایت برای مرور می‌مانند.</div></div>
 <h2 id="paths">مسیرهای آموزشی</h2>
 <div class="grid" id="g1"></div>
+<h2>مینی‌دورهٔ نحو</h2>
+<p class="sub">سه درس کوتاه برای آشنایی با جمله و نقش کلمه‌ها.</p>
+<div class="grid" id="mini-courses"></div>
+<h2>دوره‌های افزوده‌شده</h2>
+<div id="cloud-courses"><p class="mut">برای نمایش دوره‌های آنلاین، حساب Supabase را تنظیم کن.</p></div>
 <h2>گواهی شرکت</h2>
 <div class="cd"><div class="tile" style="--t:#fef3c7" aria-hidden="true">🏅</div><h3>با قبولی در آزمون جامع، گواهی بگیر</h3><p>گواهی شرکت با شناسه قابل‌استعلام برای هر دوره صادر می‌شود.</p><button class="btn" data-v="cert">دیدن گواهی</button></div>
 <p class="note">این صفحه نمونه اولیه است: واحد ۱ صرف و لهجه عراقی کار می‌کنند و بقیه مسیرها در دست تولیدند. گواهی با نام دانشگاه در مراحل بعد و با توافق دانشگاه بررسی می‌شود.</p>
@@ -157,6 +187,8 @@ svg text{font-family:inherit}
 <nav class="crumb" aria-label="مسیر صفحه"><a href="#home">خانه</a> › مرور هوشمند</nav>
 <h1 tabindex="-1">مرور هوشمند</h1>
 <p class="sub">سؤال‌هایی که اشتباه جواب می‌دهی ذخیره می‌شوند و با فاصله‌های زمانی (مثلاً ۱، ۳، ۷ و ۱۴ روز بعد) دوباره برایت می‌آیند.</p>
+<div class="actions"><button class="btn" id="review-start">مرور سؤال‌های رسیده</button><button class="btn alt" id="review-all">مرور فوری همهٔ اشتباه‌ها</button></div>
+<p class="small" id="review-summary"></p>
 <div id="rv"></div>
 </section>
 
@@ -164,9 +196,70 @@ svg text{font-family:inherit}
 <nav class="crumb" aria-label="مسیر صفحه"><a href="#home">خانه</a> › گواهی</nav>
 <h1 tabindex="-1">گواهی شرکت</h1>
 <div id="certbox"></div>
+<p class="small"><a href="#verify">بررسی آنلاین شناسهٔ گواهی</a></p>
+</section>
+
+<section id="v-dashboard" hidden>
+<nav class="crumb"><a href="#home">خانه</a> › پیشرفت</nav>
+<h1 tabindex="-1">پیشرفت یادگیری</h1>
+<p class="sub">آمار این دستگاه و وضعیت دوره‌ها.</p>
+<div class="feature-grid" id="stats"></div>
+<div class="card"><h3>یادگیری روزانه</h3><div id="daily-stats"></div></div>
+</section>
+
+<section id="v-account" hidden>
+<nav class="crumb"><a href="#home">خانه</a> › حساب</nav>
+<h1 tabindex="-1">حساب و همگام‌سازی</h1>
+<p class="sub">پیشرفتت را بین دستگاه‌ها همگام کن. برای فعال‌کردن این بخش، فایل راهنمای راه‌اندازی Supabase را ببین.</p>
+<div id="account-status" class="status" aria-live="polite"></div>
+<form id="auth-form" class="form-grid">
+<label>ایمیل<input type="email" id="auth-email" autocomplete="email" required></label>
+<label>گذرواژه<input type="password" id="auth-password" autocomplete="current-password" minlength="8" required></label>
+<label id="name-wrap">نام نمایشی<input type="text" id="auth-name" autocomplete="name"></label>
+<div class="actions"><button class="btn" type="submit" id="sign-in">ورود</button><button class="btn alt" type="button" id="sign-up">ساخت حساب</button><button class="btn alt" type="button" id="sign-out" hidden>خروج</button><button class="btn alt" type="button" id="sync-now" hidden>همگام‌سازی</button></div>
+</form>
+<p class="small">حالت مهمان هم کار می‌کند؛ پیشرفتش روی همین مرورگر می‌ماند.</p>
+</section>
+
+<section id="v-admin" hidden>
+<nav class="crumb"><a href="#home">خانه</a> › مدیریت</nav>
+<h1 tabindex="-1">پنل مدیریت</h1>
+<p class="sub">مدیریت کاربران، دوره‌ها، ثبت‌نام‌ها، درس‌ها و فایل‌های صوتی. دسترسی فقط برای مدیر تأییدشدهٔ Supabase است.</p>
+<div id="admin-status" class="status" aria-live="polite"></div>
+<div id="admin-summary" class="admin-grid"></div>
+<div class="admin-section"><h2>کاربران و ثبت‌نام‌ها</h2><p class="small">اطلاعات حساب و پیشرفت آموزشی کاربران؛ تغییر نقش مدیر فقط از طریق این پنل ممکن است.</p><div id="admin-users"></div></div>
+<form id="course-form" class="form-grid admin-section">
+<h2 id="course-form-title">افزودن دوره</h2>
+<label>شناسه (انگلیسی، بدون فاصله)<input id="course-id" required pattern="[a-z0-9-]+"></label>
+<label>عنوان<input id="course-title" required></label>
+<label>توضیح<input id="course-description" required></label>
+<label><span>وضعیت انتشار</span><select id="course-published"><option value="true">منتشرشده</option><option value="false">پیش‌نویس</option></select></label>
+<label><span>ثبت‌نام</span><select id="course-enrollment"><option value="true">باز</option><option value="false">بسته</option></select></label>
+<div class="actions"><button class="btn" type="submit">ذخیرهٔ دوره</button><button class="btn alt" type="button" id="course-cancel" hidden>لغو ویرایش</button></div>
+</form>
+<form id="lesson-form" class="form-grid admin-section">
+<h2 id="lesson-form-title">افزودن درس</h2>
+<label>دوره<select id="lesson-course" required></select></label>
+<label>شناسهٔ درس (انگلیسی)<input id="lesson-id" required pattern="[a-z0-9-]+"></label>
+<label>عنوان درس<input id="lesson-title" required></label>
+<label>ترتیب<input id="lesson-order" type="number" min="1" value="1" required></label>
+<label>محتوای درس (JSON)<textarea id="lesson-content" required>{"text":"متن درس را اینجا بنویسید","questions":[]}</textarea></label>
+<label>فایل صوتی اختیاری<input id="lesson-audio" type="file" accept="audio/*"></label>
+<label><span>وضعیت انتشار درس</span><select id="lesson-published"><option value="true">منتشرشده</option><option value="false">پیش‌نویس</option></select></label>
+<div class="actions"><button class="btn" type="submit">ذخیرهٔ درس</button><button class="btn alt" type="button" id="lesson-cancel" hidden>لغو ویرایش</button></div>
+</form>
+<div class="admin-section"><h2>دوره‌ها و درس‌ها</h2><div id="admin-content"></div></div>
+</section>
+
+<section id="v-verify" hidden>
+<nav class="crumb"><a href="#home">خانه</a> › بررسی گواهی</nav>
+<h1 tabindex="-1">بررسی گواهی</h1>
+<form id="verify-form" class="form-grid"><label>شناسهٔ گواهی<input id="verify-code" required></label><button class="btn" type="submit">بررسی</button></form>
+<div id="verify-result" class="status" aria-live="polite"></div>
 </section>
 </main>
-<footer class="w foot">نمونه اولیه (Prototype) · درس‌ها داده‌محورند و افزودن درس یعنی افزودن یک آیتم به آرایه LS.</footer>
+<footer class="w foot">نمونهٔ آموزشی · محتوای پایه همراه با امکان افزودن و ویرایش درس از پنل مدیریت.</footer>
+<script src="./supabase-config.js"></script>
 <script>
 const $=s=>document.querySelector(s),bd=$('#board'),sy=$('#say'),ac=$('#act'),tb=$('#tb');
 function chalk(h,c,d){const e=document.createElement('div');e.className='ln '+(c||'');e.style.animationDelay=(d||0)+'s';e.innerHTML=h;bd.appendChild(e)}
@@ -219,12 +312,23 @@ say(hl?l.re:l.s);
 btns([['بله، متوجه شدم ✅',check],['نه، هنوز نه 🤔',()=>lesson(true)]])}
 
 function ask(q,o,c,ok,bad,fin){chalk(q,'q',.2);ac.innerHTML='';
-o.forEach((t,i)=>{const b=document.createElement('button');b.className='btn alt';b.textContent=t;b.onclick=()=>{
-[...ac.children].forEach(x=>x.disabled=true);
-if(i===c){b.className='btn ok';say('درسته! آفرین. ۱۰+ امتیاز');gain(10);setTimeout(ok,1100)}
-else{b.className='btn no';const tag=q+' ← '+o[c];if(!missed.includes(tag)){missed.push(tag);upd();rev()}
+const mode=window.nextQuestionMode?window.nextQuestionMode():{type:'choice'};
+const finish=(correct,b)=>{[...ac.querySelectorAll('button,input')].forEach(x=>x.disabled=true);
+if(window.recordAttempt)window.recordAttempt(correct);
+if(correct){if(b)b.className='btn ok';say('درسته! آفرین. ۱۰+ امتیاز');gain(10);setTimeout(ok,1100)}
+else{if(b)b.className='btn no';const tag=q+' ← '+o[c];if(!missed.includes(tag)){missed.push(tag);upd();rev()}
+if(window.scheduleReview)window.scheduleReview(q,o[c]);
 say(fin?'جواب درست: '+o[c]:'نه دقیقاً؛ بیا دوباره توضیح بدهم.');setTimeout(bad,1500)}};
-ac.appendChild(b)})}
+if(mode.type==='typed'){
+const input=document.createElement('input');input.className='inp';input.dir='auto';input.placeholder='پاسخ را بنویس';input.setAttribute('aria-label','پاسخ را بنویس');
+const submit=document.createElement('button');submit.className='btn';submit.textContent='بررسی پاسخ';
+const check=()=>{const normalize=s=>s.trim().replace(/[\u064B-\u065F\u0670ـ]/g,'').replace(/[؟?!.,،]/g,'').replace(/\s+/g,' ').toLowerCase();finish(normalize(input.value)===normalize(o[c]),submit)};
+submit.onclick=check;input.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();check()}};
+ac.append(input,submit);return}
+if(mode.type==='truefalse'){
+const i=mode.optionIndex%o.length;chalk('پاسخ پیشنهادی: «'+o[i]+'» · درست است؟','',.35);
+[['درست است',i===c],['نادرست است',i!==c]].forEach(([label,correct])=>{const b=document.createElement('button');b.className='btn alt';b.textContent=label;b.onclick=()=>finish(correct,b);ac.appendChild(b)});return}
+o.forEach((t,i)=>{const b=document.createElement('button');b.className='btn alt';b.textContent=t;b.onclick=()=>finish(i===c,b);ac.appendChild(b)})}
 
 function check(){const l=LS[cur];clr();chalk('پیش از ادامه، یک سؤال کوچک','h');
 ask(l.c[0],l.c[1],l.c[2],practice,()=>lesson(true),false)}
@@ -238,18 +342,18 @@ ask(f[0],f[1],f[2],()=>{sc++;qi++;next()},()=>{qi++;next()},true)}
 function res(){clr();const e=ex,n=e?exQ.length:3,need=e?4:2,p=sc>=need;ex=false;
 chalk(p?(e?'🏆 آزمون جامع را گذراندی!':'🎉 قبول شدی!'):'نیاز به مرور داری','h');
 chalk(`نمره: ${sc} از ${n} (حداقل ${need} برای قبولی)`,'',.3);
-if(p){if(e){if(!examDone){gain(50);burst()}examDone=true;say('واحد اول کامل شد! گواهی‌ات آماده است.')}
+if(p){if(e){if(!examDone){gain(50);burst()}examDone=true;upd();say('واحد اول کامل شد! گواهی‌ات آماده است.');if(window.issueCertificate)window.issueCertificate()}
 else{if(done<cur+1){gain(20);burst()}done=Math.max(done,cur+1);unl=Math.min(5,Math.max(unl,cur+2));say(cur<4?'عالی! درس بعدی باز شد.':'همه ۵ درس تمام شد؛ آزمون جامع باز شد.')}
 btns(e?[['دریافت گواهی 🏅',()=>go('cert')],['بازگشت به درس‌ها',goMap,'alt']]:[['به نقشه درس‌ها ▼',goMap]])}
 else{say('اشکالی ندارد؛ اشتباه‌هایت به بخش مرور هوشمند رفت.');btns([[e?'به نقشه درس‌ها':'تکرار درس',e?goMap:()=>start(cur)]])}
 map()}
 
 const fa=n=>n.toLocaleString('fa-IR');
-const V=['home','sarf','dialect','lesson','review','cert'];let started=false,cid='',nm='';
+const V=['home','sarf','dialect','lesson','review','cert','dashboard','account','admin','verify'];let started=false,cid=localStorage.getItem('adk_cid')||'',nm=localStorage.getItem('adk_name')||'';
 const P=[{id:'sarf',ic:'📘',t:'صرف',d:'ساختار کلمه: ماضی، مضارع و امر',lv:'مبتدی',n:5,c:'#e0e7ff'},{id:'dialect',ic:'🗣️',t:'لهجه‌های عربی',d:'عراقی، خلیجی، شامی و مصری',lv:'همه سطوح',c:'#fce7f3'},{id:'',ic:'🧩',t:'نحو',d:'جایگاه کلمه در جمله و اعراب',lv:'متوسط',c:'#dcfce7'},{id:'',ic:'✨',t:'بلاغت',d:'معانی، بیان و بدیع',lv:'متوسط',c:'#fef3c7'},{id:'',ic:'🎯',t:'آزمون‌ها و تقویتی‌ها',d:'کمک‌درسی دروس رشته و آمادگی ارشد و دکتری',lv:'کارشناسی و ارشد',c:'#e0f2fe'},{id:'',ic:'🎤',t:'کارگاه‌های آنلاین',d:'مکالمه و مهارت‌های تخصصی',lv:'همه سطوح',c:'#ffedd5'}];
 function go(v){location.hash=v}
 function gain(n){xp+=n;upd()}
-function upd(){$('#xpc').textContent='⭐ '+fa(xp)+' امتیاز · سطح '+fa(Math.floor(xp/100)+1);localStorage.setItem('adk_xp',xp);localStorage.setItem('adk_done',done);localStorage.setItem('adk_unl',unl);localStorage.setItem('adk_examDone',examDone);localStorage.setItem('adk_missed',JSON.stringify(missed))}
+function upd(){$('#xpc').textContent='⭐ '+fa(xp)+' امتیاز · سطح '+fa(Math.floor(xp/100)+1);localStorage.setItem('adk_xp',xp);localStorage.setItem('adk_done',done);localStorage.setItem('adk_unl',unl);localStorage.setItem('adk_examDone',examDone);localStorage.setItem('adk_missed',JSON.stringify(missed));if(window.markLocalStateChanged)window.markLocalStateChanged()}
 function burst(){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;for(let i=0;i<24;i++){const s=document.createElement('span');s.className='cf';s.textContent=['🎉','⭐','✨','🎓'][i%4];s.style.left=Math.random()*100+'vw';s.style.animationDelay=Math.random()*.5+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),2600)}}
 function card(p){const b=p.id?`<button class="btn" onclick="go('${p.id}')">ورود</button>`:'<span class="bg">به‌زودی</span>';return `<article class="cd"><div class="tile" style="--t:${p.c}" aria-hidden="true">${p.ic}</div><h3>${p.t}</h3><p>${p.d}</p><p>${p.lv}${p.n?' · '+fa(p.n)+' درس':''}</p>${b}</article>`}
 function start(i){cur=i;ex=false;lesson(false)}
@@ -274,9 +378,9 @@ $('#syl').innerHTML=LS.map((l,i)=>`<li class="${i<unl?'':'lk'}"><span><b>درس 
 upd();rev()}
 function certView(){const b=$('#certbox');
 if(!examDone){b.innerHTML=`<div class="card"><p>گواهی بعد از قبولی در آزمون جامع واحد ۱ باز می‌شود. ${done>=5?'همه درس‌ها تمام شده؛ آزمون را بده.':'پیشرفت تو: '+fa(done)+' از ۵ درس.'}</p><button class="btn" id="cgo">${done>=5?'شروع آزمون':'رفتن به درس‌ها'}</button></div>`;$('#cgo').onclick=()=>done>=5?startExam():go('sarf');return}
-if(!cid)cid='ADK-'+Math.random().toString(36).slice(2,6).toUpperCase()+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
+if(!cid)cid='ADK-'+Math.random().toString(36).slice(2,6).toUpperCase()+'-'+Math.random().toString(36).slice(2,6).toUpperCase();localStorage.setItem('adk_cid',cid);
 b.innerHTML=`<p class="noprint"><label for="nm">نام و نام خانوادگی روی گواهی</label><br><input class="inp" id="nm" placeholder="نام خودت را بنویس"></p><div class="cert"><p class="mut">ادبیات‌کده · گواهی شرکت</p><h2>گواهی پایان دوره</h2><p>این گواهی به</p><div class="nm" id="cnm"></div><p>برای گذراندن دوره «مبانی صرف عربی · واحد ۱» و قبولی در آزمون جامع آن اعطا می‌شود.</p><p class="mut">شناسه قابل‌استعلام: <b dir="ltr">${cid}</b></p></div><p class="note">نمونه نمایشی. در نسخه کامل، شناسه روی سایت قابل‌استعلام است و صدور گواهی با نام دانشگاه در مراحل بعد و با توافق دانشگاه بررسی می‌شود.</p><button class="btn noprint" onclick="print()">چاپ یا ذخیره PDF</button>`;
-const i=$('#nm'),o=$('#cnm'),f=()=>{nm=i.value;o.textContent=nm||'نام شما'};i.value=nm;i.oninput=f;f()}
+const i=$('#nm'),o=$('#cnm'),f=()=>{nm=i.value;o.textContent=nm||'نام شما';localStorage.setItem('adk_name',nm)};i.value=nm;i.oninput=f;f()}
 function show(){let v=location.hash.slice(1);if(!V.includes(v))v='home';
 if(v==='lesson'&&!started){started=true;start(0)}
 V.forEach(x=>$('#v-'+x).hidden=x!==v);
@@ -289,5 +393,6 @@ document.querySelectorAll('[data-v],[data-s]').forEach(b=>b.onclick=()=>{if(b.da
 addEventListener('hashchange',show);
 show();
 </script>
+<script src="./app.js"></script>
 </body>
 </html>
